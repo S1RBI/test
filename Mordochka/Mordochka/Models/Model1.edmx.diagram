@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0d32ff100a3941ffaee0b8d94e896f89" Name="Diagram1">
+        <EntityTypeShape EntityType="mordochkaModel.Category" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Category_Product" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Client" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.ClientService" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Employee" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.EnterClient" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Files" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Gender" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Product" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Service" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Tag" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.TagClient" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Image_Product" Width="1.5" PointX="12.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mordochkaModel.Image_Service" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="mordochkaModel.FK__Employee__id_cat__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Product__id_catp__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Client__id_gende__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__ClientSer__id_cl__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__EnterClie__id_cl__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__TagClient__id_cl__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__ClientSer__id_se__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Files__id_client__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Employee__id_gen__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Image_Pro__id_pr__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__Image_Ser__id_se__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="mordochkaModel.FK__TagClient__id_ta__3F466844" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

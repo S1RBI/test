@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище mordochkaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id_category" />
+    </Key>
+    <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_category" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category_Product">
+    <Key>
+      <PropertyRef Name="id_catprod" />
+    </Key>
+    <Property Name="id_catprod" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_catprod" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="id_client" />
+    </Key>
+    <Property Name="id_client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="surname" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="patronymic" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="id_gender" Type="int" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="photo" Type="varchar" MaxLength="200" />
+    <Property Name="birthdate" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateregistr" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClientService">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id_client" Type="int" Nullable="false" />
+    <Property Name="start_date" Type="datetime" Nullable="false" />
+    <Property Name="id_service" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="id_employee" />
+    </Key>
+    <Property Name="id_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="surname_employee" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="name_employee" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="patronymic" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="series" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="numbers" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="id_divisions" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="id_gender" Type="int" Nullable="false" />
+    <Property Name="payment" Type="float" Nullable="false" />
+    <Property Name="birthdate" Type="date" Nullable="false" />
+    <Property Name="id_category" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnterClient">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date_enter" Type="datetime" />
+    <Property Name="id_client" Type="int" />
+  </EntityType>
+  <EntityType Name="Files">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="id_client_service" Type="int" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="id_gender" />
+    </Key>
+    <Property Name="id_gender" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gender" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "mordochka.dbo.Image_Product" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Image_Product">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="int" Nullable="false" />
+    <Property Name="image_other" Type="image" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "mordochka.dbo.Image_Service" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Image_Service">
+    <Key>
+      <PropertyRef Name="id_service" />
+    </Key>
+    <Property Name="id_service" Type="int" Nullable="false" />
+    <Property Name="image_other" Type="image" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="id_product" />
+    </Key>
+    <Property Name="id_product" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_product" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="id_catprod" Type="int" Nullable="false" />
+    <Property Name="cost" Type="money" Nullable="false" />
+    <Property Name="property" Type="varchar" MaxLength="300" />
+    <Property Name="description" Type="varchar" MaxLength="300" />
+    <Property Name="weight" Type="float" Nullable="false" />
+    <Property Name="size_width" Type="float" Nullable="false" />
+    <Property Name="size_height" Type="float" Nullable="false" />
+    <Property Name="size_length" Type="float" Nullable="false" />
+    <Property Name="producer" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="start_date_producer" Type="date" />
+    <Property Name="image" Type="image" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="id_service" />
+    </Key>
+    <Property Name="id_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_service" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="duration" Type="int" Nullable="false" />
+    <Property Name="cost_servise" Type="money" Nullable="false" />
+    <Property Name="discount" Type="int" Nullable="false" />
+    <Property Name="image_service" Type="image" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="id_tag" />
+    </Key>
+    <Property Name="id_tag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name_tag" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="collor" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TagClient">
+    <Key>
+      <PropertyRef Name="id_tagclient" />
+    </Key>
+    <Property Name="id_tagclient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_tag" Type="int" Nullable="false" />
+    <Property Name="id_client" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Client__id_gende__3B75D760">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="id_gender" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="id_gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientSer__id_cl__52593CB8">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="ClientService">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ClientSer__id_se__534D60F1">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="id_service" />
+      </Principal>
+      <Dependent Role="ClientService">
+        <PropertyRef Name="id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__id_cat__45F365D3">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id_category" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="id_category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__id_gen__44FF419A">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="id_gender" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="id_gender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EnterClie__id_cl__571DF1D5">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="EnterClient" Type="Self.EnterClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="EnterClient">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Files__id_client__5AEE82B9">
+    <End Role="ClientService" Type="Self.ClientService" Multiplicity="0..1" />
+    <End Role="Files" Type="Self.Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientService">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="id_client_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Image_Pro__id_pr__4CA06362">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Image_Product" Type="Self.Image_Product" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id_product" />
+      </Principal>
+      <Dependent Role="Image_Product">
+        <PropertyRef Name="id_product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Image_Ser__id_se__5070F446">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="Image_Service" Type="Self.Image_Service" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="id_service" />
+      </Principal>
+      <Dependent Role="Image_Service">
+        <PropertyRef Name="id_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__id_catp__4AB81AF0">
+    <End Role="Category_Product" Type="Self.Category_Product" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category_Product">
+        <PropertyRef Name="id_catprod" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="id_catprod" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TagClient__id_cl__403A8C7D">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="TagClient" Type="Self.TagClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="id_client" />
+      </Principal>
+      <Dependent Role="TagClient">
+        <PropertyRef Name="id_client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TagClient__id_ta__3F466844">
+    <End Role="Tag" Type="Self.Tag" Multiplicity="1" />
+    <End Role="TagClient" Type="Self.TagClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="id_tag" />
+      </Principal>
+      <Dependent Role="TagClient">
+        <PropertyRef Name="id_tag" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище mordochkaModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category_Product" EntityType="Self.Category_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientService" EntityType="Self.ClientService" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnterClient" EntityType="Self.EnterClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TagClient" EntityType="Self.TagClient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image_Product" EntityType="Self.Image_Product" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Image_Product].[id_product] AS [id_product], 
+    [Image_Product].[image_other] AS [image_other]
+    FROM [dbo].[Image_Product] AS [Image_Product]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Image_Service" EntityType="Self.Image_Service" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Image_Service].[id_service] AS [id_service], 
+    [Image_Service].[image_other] AS [image_other]
+    FROM [dbo].[Image_Service] AS [Image_Service]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Client__id_gende__3B75D760" Association="Self.FK__Client__id_gende__3B75D760">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientSer__id_cl__52593CB8" Association="Self.FK__ClientSer__id_cl__52593CB8">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="ClientService" EntitySet="ClientService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ClientSer__id_se__534D60F1" Association="Self.FK__ClientSer__id_se__534D60F1">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="ClientService" EntitySet="ClientService" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__id_cat__45F365D3" Association="Self.FK__Employee__id_cat__45F365D3">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__id_gen__44FF419A" Association="Self.FK__Employee__id_gen__44FF419A">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EnterClie__id_cl__571DF1D5" Association="Self.FK__EnterClie__id_cl__571DF1D5">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="EnterClient" EntitySet="EnterClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Files__id_client__5AEE82B9" Association="Self.FK__Files__id_client__5AEE82B9">
+      <End Role="ClientService" EntitySet="ClientService" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Image_Pro__id_pr__4CA06362" Association="Self.FK__Image_Pro__id_pr__4CA06362">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Image_Product" EntitySet="Image_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Image_Ser__id_se__5070F446" Association="Self.FK__Image_Ser__id_se__5070F446">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Image_Service" EntitySet="Image_Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__id_catp__4AB81AF0" Association="Self.FK__Product__id_catp__4AB81AF0">
+      <End Role="Category_Product" EntitySet="Category_Product" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TagClient__id_cl__403A8C7D" Association="Self.FK__TagClient__id_cl__403A8C7D">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="TagClient" EntitySet="TagClient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TagClient__id_ta__3F466844" Association="Self.FK__TagClient__id_ta__3F466844">
+      <End Role="Tag" EntitySet="Tag" />
+      <End Role="TagClient" EntitySet="TagClient" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

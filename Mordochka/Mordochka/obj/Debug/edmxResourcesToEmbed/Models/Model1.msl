@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище mordochkaModelContainer" CdmEntityContainer="mordochkaEntities">
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="mordochkaModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="name_category" ColumnName="name_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_Product">
+      <EntityTypeMapping TypeName="mordochkaModel.Category_Product">
+        <MappingFragment StoreEntitySet="Category_Product">
+          <ScalarProperty Name="id_catprod" ColumnName="id_catprod" />
+          <ScalarProperty Name="name_catprod" ColumnName="name_catprod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client">
+      <EntityTypeMapping TypeName="mordochkaModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dateregistr" ColumnName="dateregistr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientService">
+      <EntityTypeMapping TypeName="mordochkaModel.ClientService">
+        <MappingFragment StoreEntitySet="ClientService">
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="id_service" ColumnName="id_service" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="mordochkaModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="id_employee" ColumnName="id_employee" />
+          <ScalarProperty Name="surname_employee" ColumnName="surname_employee" />
+          <ScalarProperty Name="name_employee" ColumnName="name_employee" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="series" ColumnName="series" />
+          <ScalarProperty Name="numbers" ColumnName="numbers" />
+          <ScalarProperty Name="id_divisions" ColumnName="id_divisions" />
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="payment" ColumnName="payment" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnterClient">
+      <EntityTypeMapping TypeName="mordochkaModel.EnterClient">
+        <MappingFragment StoreEntitySet="EnterClient">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_enter" ColumnName="date_enter" />
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Files">
+      <EntityTypeMapping TypeName="mordochkaModel.Files">
+        <MappingFragment StoreEntitySet="Files">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="id_client_service" ColumnName="id_client_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender">
+      <EntityTypeMapping TypeName="mordochkaModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="id_gender" ColumnName="id_gender" />
+          <ScalarProperty Name="gender1" ColumnName="gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="mordochkaModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id_product" ColumnName="id_product" />
+          <ScalarProperty Name="name_product" ColumnName="name_product" />
+          <ScalarProperty Name="id_catprod" ColumnName="id_catprod" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="size_width" ColumnName="size_width" />
+          <ScalarProperty Name="size_height" ColumnName="size_height" />
+          <ScalarProperty Name="size_length" ColumnName="size_length" />
+          <ScalarProperty Name="producer" ColumnName="producer" />
+          <ScalarProperty Name="start_date_producer" ColumnName="start_date_producer" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="mordochkaModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="id_service" ColumnName="id_service" />
+          <ScalarProperty Name="name_service" ColumnName="name_service" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+          <ScalarProperty Name="cost_servise" ColumnName="cost_servise" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="image_service" ColumnName="image_service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tag">
+      <EntityTypeMapping TypeName="mordochkaModel.Tag">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="id_tag" ColumnName="id_tag" />
+          <ScalarProperty Name="name_tag" ColumnName="name_tag" />
+          <ScalarProperty Name="collor" ColumnName="collor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TagClient">
+      <EntityTypeMapping TypeName="mordochkaModel.TagClient">
+        <MappingFragment StoreEntitySet="TagClient">
+          <ScalarProperty Name="id_tagclient" ColumnName="id_tagclient" />
+          <ScalarProperty Name="id_tag" ColumnName="id_tag" />
+          <ScalarProperty Name="id_client" ColumnName="id_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image_Product">
+      <EntityTypeMapping TypeName="mordochkaModel.Image_Product">
+        <MappingFragment StoreEntitySet="Image_Product">
+          <ScalarProperty Name="id_product" ColumnName="id_product" />
+          <ScalarProperty Name="image_other" ColumnName="image_other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image_Service">
+      <EntityTypeMapping TypeName="mordochkaModel.Image_Service">
+        <MappingFragment StoreEntitySet="Image_Service">
+          <ScalarProperty Name="id_service" ColumnName="id_service" />
+          <ScalarProperty Name="image_other" ColumnName="image_other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
